@@ -59,6 +59,10 @@ class NetworkBitmapHunter extends BitmapHunter {
     if (is == null) {
       return null;
     }
+    // TODO: Figure this out.
+    //if (response.getContentLength() == 0) {
+    //  throw new IOException("Somehow got response but no content...");
+    //
     if (loadedFrom == NETWORK && response.getContentLength() > 0) {
       stats.dispatchDownloadFinished(response.getContentLength());
     }
