@@ -1,0 +1,28 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.4.2'
+    }
+}
+
+apply plugin: 'android-library'
+
+android {
+    buildToolsVersion "19.0"
+    compileSdkVersion 17
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/AndroidManifest.xml'
+            java.srcDirs = ['src/java']
+        }
+    }
+
+    // This is important, it will run lint checks but won't abort build
+    lintOptions {
+        abortOnError false
+    }
+}
